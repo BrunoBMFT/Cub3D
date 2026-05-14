@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_init.c                                       :+:      :+:    :+:   */
+/*   cub3d_init_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfernan <brfernan@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 void	init_variables(t_data *data)
 {
@@ -39,6 +39,7 @@ bool	init(int ac, char **av, t_data *data)
 		return (false);
 	if (!player_init(data))
 		return (false);
+	data->door_opened = false;
 	data->mlx = mlx_init();
 	if (!data->mlx)
 		return (error("Failed to initialize mlx"));

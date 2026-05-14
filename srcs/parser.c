@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   parser_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfernan <brfernan@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 bool	name_check(int ac, char **av)
 {
@@ -21,7 +21,7 @@ bool	name_check(int ac, char **av)
 		return (error("Wrong number of arguments"));
 	len = ft_strlen(av[1]);
 	temp = av[1] + len - 4;
-	if (len < 5 || ft_strcmp(temp, ".cub"))
+	if (len < 5 || ft_strncmp(temp, ".cub", ft_strlen(temp)))
 		return (error("Name is wrong"));
 	return (true);
 }

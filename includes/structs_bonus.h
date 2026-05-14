@@ -56,8 +56,7 @@ typedef struct s_data
 	t_img		west;
 	int			color_floor;
 	int			color_ceiling;
-	int			door_opened;
-	int			map_active;
+	bool		door_opened;
 	char		**map;
 	size_t		map_height;
 	size_t		map_width;

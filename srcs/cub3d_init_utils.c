@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_init_utils.c                                 :+:      :+:    :+:   */
+/*   cub3d_init_utils_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfernan <brfernan@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:04:53 by brfernan          #+#    #+#             */
-/*   Updated: 2025/05/12 18:36:06 by brfernan         ###   ########.fr       */
+/*   Updated: 2025/05/12 15:01:53 by brfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 bool	init_texture_img(t_data *data, t_img *texture, char *img_src)
 {

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raycast_frame.c                                    :+:      :+:    :+:   */
+/*   raycast_frame_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfernan <brfernan@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 int	get_pixel(t_img *img, int x, int y)
 {
@@ -56,5 +56,6 @@ void	create_frame(t_data *data)
 {
 	create_background(data);
 	raycast(data);
+	create_map(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->frame.img, 0, 0);
 }

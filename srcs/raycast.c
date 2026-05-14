@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raycast.c                                          :+:      :+:    :+:   */
+/*   raycast_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfernan <brfernan@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 bool	hit_inter(t_data *data, float y, float x)
 {
@@ -23,7 +23,9 @@ bool	hit_inter(t_data *data, float y, float x)
 		|| map_y >= data->map_height
 		|| map_x >= ft_strlen(data->map[map_y]))
 		return (false);
-	if (data->map[map_y][map_x] == '1')
+	if (data->map[map_y][map_x] == '1'
+		|| (data->map[map_y][map_x] == 'D'
+		&& !data->door_opened))
 		return (false);
 	return (true);
 }

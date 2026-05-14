@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input.c                                            :+:      :+:    :+:   */
+/*   input_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfernan <brfernan@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../includes/cub3d_bonus.h"
 
 void	walk_aux(t_data *data, float y_temp, float x_temp)
 {
@@ -20,7 +20,9 @@ void	walk_aux(t_data *data, float y_temp, float x_temp)
 	map_y = floor (y_temp);
 	map_x = floor (x_temp);
 	if ((data->map[map_y] && data->map[map_y][map_x]) &&
-		(data->map[map_y][map_x] != '1'))
+		(data->map[map_y][map_x] != '1' &&
+		!(data->map[map_y][map_x] == 'D'
+		&& data->door_opened)))
 	{
 		data->p_y = y_temp * SCALE;
 		data->p_x = x_temp * SCALE;
@@ -55,7 +57,7 @@ int	input(int keysym, t_data *data)
 		clean_everything(data);
 		exit(0);
 	}
-	else if (ft_strchr("wasd", keysym)
+	else if (ft_strchr("wasdfm", keysym)
 		|| keysym == XK_Left || keysym == XK_Right)
 	{
 		if (keysym == XK_Right)
@@ -64,6 +66,10 @@ int	input(int keysym, t_data *data)
 			data->p_angle -= A_STEP;
 		else if (ft_strchr("wasd", keysym))
 			walk(data, keysym);
+		else if (keysym == 'f' && data->door_opened)
+			data->door_opened = false;
+		else if (keysym == 'f' && !data->door_opened)
+			data->door_opened = true;
 		create_frame(data);
 	}
 	return (0);
