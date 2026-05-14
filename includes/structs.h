@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                    :+:      :+:    :+:   */
+/*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brfernan <brfernan@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#ifndef STRUCTS_BONUS_H
+# define STRUCTS_BONUS_H
 # include <stdbool.h>
 
 typedef struct s_coord
@@ -56,6 +56,7 @@ typedef struct s_data
 	t_img		west;
 	int			color_floor;
 	int			color_ceiling;
+	bool		door_opened;
 	char		**map;
 	size_t		map_height;
 	size_t		map_width;

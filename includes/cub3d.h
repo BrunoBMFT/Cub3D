@@ -6,17 +6,17 @@
 /*   By: brfernan <brfernan@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 00:43:02 by brfernan          #+#    #+#             */
-/*   Updated: 2025/05/12 15:03:01 by brfernan         ###   ########.fr       */
+/*   Updated: 2025/05/12 18:36:03 by brfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
+# include "minilibx-linux/mlx.h"
 # include "libft/libft.h"
 # include "structs.h"
 # include "values.h"
-# include "minilibx-linux/mlx.h"
 # include <math.h>
 # include <X11/keysym.h>
 # include <X11/X.h>
@@ -42,6 +42,7 @@ float	rad(float deg);
 
 //utils
 void	create_frame(t_data *data);
+void	create_map(t_data *data);
 void	put_pixel(t_data *data, int y, int x, int color);
 int		get_pixel(t_img *img, int x, int y);
 int		input(int keysym, t_data *data);
