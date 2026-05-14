@@ -60,7 +60,7 @@ fclean: clean
 	fi
 	@echo $(NAME) "fclean"
 	
-uninstall:
+uninstall: fclean
 	@$(RM) $(LIBFT_DIR);
 	@$(RM) $(MLX_DIR);
 	@echo "minilibx and libft uninstalled."
